@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className=" min-h-screen   flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image src="/coverphoto.jpg" alt="Car underside in garage" fill className="object-cover" priority />
@@ -12,7 +12,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 bottom-[-2] text-left text-white">
+      <div className="relative z-10 container mx-auto px-4 bottom-[-130] text-left text-white">
         <h1 className="text-5xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
           Expert Repairs,
           <br />

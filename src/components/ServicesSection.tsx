@@ -9,14 +9,14 @@ interface ServiceCardProps {
 
 function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div className="bg-gray-900 p-8 rounded-lg border-b-4 border-red-500 hover:transform hover:scale-105 transition-all duration-300 h-full">
+    <div className="bg-gray-900 px-13 pt-24 pb-15  rounded-lg border-b-10 border-red-500 hover:transform hover:scale-105 transition-all duration-300 h-full">
       <div className="flex justify-center mb-6">
         <div className="w-16 h-16 bg-transparent flex items-center justify-center">
           <div className="text-red-500">{icon}</div>
         </div>
       </div>
 
-      <h3 className="text-white text-xl font-bold mb-6 text-center tracking-wide">{title}</h3>
+      <h3 className="text-white text-xl font-bold mt-12 mb-6 text-center tracking-wide">{title}</h3>
 
       <p className="text-gray-300 text-center leading-relaxed text-sm">{description}</p>
     </div>

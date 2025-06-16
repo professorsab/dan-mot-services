@@ -54,10 +54,10 @@ export default function ContactSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto items-center">
           {/* Contact Information - Takes 2 columns */}
-          <div className="lg:col-span-2 bg-gray-900 p-8 rounded-lg border-4 border-red-500">
-            <h3 className="text-red-500 text-xl font-bold mb-2">Contact Information</h3>
+          <div className="lg:col-span-2 bg-gray-900 md:h-[400px] md:p-10 lg:p-8 lg:h-[500px]  rounded-lg border-4 border-red-500">
+            <h3 className="text-red-500 text-xl font-bold mb-2 mt-10">Contact Information</h3>
             <p className="text-white mb-8 text-sm">Need a Quick Fix? Start a Chat Now!</p>
 
             <div className="space-y-6">
