@@ -10,13 +10,15 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
-      
-      <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat" 
-           style={{ backgroundImage: "url('/aboutUs.png')" }}>
-          <ServicesSection />
+      <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat object-cover"
+           style={{ backgroundImage: "url('/aboutus.png')" }}>
+        <ServicesSection />
+      </div>
+      <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat"
+           style={{ backgroundImage: "url('/gears.png')" }}>
+      <ContactSection />
       </div>
      
-      <ContactSection />
       <Footer />
     </main>
   )
