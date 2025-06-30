@@ -120,3 +120,54 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Fade in from left */
+.animate-fade-in-left {
+  opacity: 1 !important;
+  transform: translateX(-40px);
+  animation: fadeInLeft 0.8s forwards;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+.animate-fade-in-right {
+  opacity: 1 !important;
+  transform: translateX(40px);
+  animation: fadeInRight 0.8s forwards;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 1 !important;
+  animation: fadeInUp 0.8s forwards;
+}

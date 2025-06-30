@@ -32,14 +32,14 @@ export default function Header() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           <Link
-            href="#home"
+            href="/"
             className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium relative group"
           >
             Homepage
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
-            href="#about"
+            href="/about"
             className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium relative group"
           >
             About Us
