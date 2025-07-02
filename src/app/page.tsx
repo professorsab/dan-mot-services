@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat object-cover"
-           style={{ backgroundImage: "url('/aboutus.png')" }}>
+           style={{ backgroundImage: "url('/aboutUs.png')" }}>
         <ServicesSection />
          <ContactSection />
       </div>
