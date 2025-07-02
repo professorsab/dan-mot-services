@@ -13,11 +13,12 @@ export default function Home() {
       <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat object-cover"
            style={{ backgroundImage: "url('/aboutus.png')" }}>
         <ServicesSection />
+         <ContactSection />
       </div>
-      <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat"
+      {/* <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat"
            style={{ backgroundImage: "url('/gears.png')" }}>
       <ContactSection />
-      </div>
+      </div> */}
      
       <Footer />
     </main>
