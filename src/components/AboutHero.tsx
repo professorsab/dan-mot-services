@@ -64,7 +64,7 @@ export default function AboutHero() {
                 committed to making your experience as straightforward and stress-free as possible.
               </p>
 
-              <p className="text-lg">At Precision Auto Repair, your vehicle is in good hands — and so are you.</p>
+              <p className="text-lg">At Dan MOT & Services, your vehicle is in good hands — and so are you.</p>
             </div>
           </div>
 

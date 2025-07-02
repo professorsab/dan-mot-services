@@ -1,13 +1,11 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useState, useEffect, use } from "react" // Add this import
+import { useState, useEffect } from "react" // Removed 'use' import as it's not used
 
 export default function HeroSection() {
-  // Add this state declaration
   const [isVisible, setIsVisible] = useState(false)
 
-  // Add this effect to trigger animation after component mounts
   useEffect(() => {
     setIsVisible(true)
   }, [])
