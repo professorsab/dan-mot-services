@@ -54,13 +54,13 @@ export default function AboutHero() {
               <p className="text-lg">
                 At Dan MOT & Services, we believe that quality work, honest service, and customer care go a long way.
                 Our team of skilled and hardworking technicians is dedicated to keeping your vehicle safe, reliable, and
-                running smoothly. Whether it's a routine check-up, a fender bender, or more serious damage, we handle
+                running smoothly. Whether it&apos;s a routine check-up, a fender bender, or more serious damage, we handle
                 every job with the same level of care and attention to detail.
               </p>
 
               <p className="text-lg">
-                We know how stressful car issues can be — that's why we're here to guide you through the process,
-                explain everything clearly, and get you back on the road with confidence. From start to finish, we're
+                We know how stressful car issues can be — that&apos;s why we&apos;re here to guide you through the process,
+                explain everything clearly, and get you back on the road with confidence. From start to finish, we&apos;re
                 committed to making your experience as straightforward and stress-free as possible.
               </p>
 

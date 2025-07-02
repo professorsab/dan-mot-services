@@ -79,7 +79,7 @@ export default function ContactSection() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Book your service, ask questions, or get a quote. We're here to help with all your automotive needs.
+            Book your service, ask questions, or get a quote. We&apos;re here to help with all your automotive needs.
           </p>
         </div>
 
@@ -149,7 +149,7 @@ export default function ContactSection() {
                 <div className="text-center py-12">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4 animate-pulse" />
                   <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                  <p className="text-gray-300">We'll get back to you within 24 hours.</p>
+                  <p className="text-gray-300">We&apos;ll get back to you within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">

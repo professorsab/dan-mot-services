@@ -77,7 +77,7 @@ export default function AboutServices() {
     {
       title: "EXPERT OIL CHANGES",
       description:
-        "At Elite Property Solutions, we make finding your perfect home simple and stress-free — whether you're starting a new chapter or upgrading for your family's needs. With properties like this modern, spacious house, we offer trusted deals, personalized support, and a commitment to helping you settle into a place that truly feels like home.",
+        "At Elite Property Solutions, we make finding your perfect home simple and stress-free — whether you&apos;re starting a new chapter or upgrading for your family&apos;s needs. With properties like this modern, spacious house, we offer trusted deals, personalized support, and a commitment to helping you settle into a place that truly feels like home.",
       imageSrc: "/oil-change.jpg",
       imageAlt: "Professional oil change service",
       reverse: false,
@@ -85,7 +85,7 @@ export default function AboutServices() {
     {
       title: "TRUSTED MOT SERVICE",
       description:
-        "Unlock the potential of prime commercial real estate with Creative Properties. Whether you're investing in office spaces, retail hubs, or industrial complexes, we deliver market expertise, seamless transactions, and a commitment to maximizing your returns and help you promise and deliver that bring growth.",
+        "Unlock the potential of prime commercial real estate with Creative Properties. Whether you&apos;re investing in office spaces, retail hubs, or industrial complexes, we deliver market expertise, seamless transactions, and a commitment to maximizing your returns and help you promise and deliver that bring growth.",
       imageSrc: "/mot-service.png",
       imageAlt: "MOT testing and inspection service",
       reverse: true,
@@ -93,7 +93,7 @@ export default function AboutServices() {
     {
       title: "BRAKE REPAIR EXPERT",
       description:
-        "At Elite Property Solutions, we make finding your perfect home simple and stress-free — whether you're starting a new chapter or upgrading for your family's needs. With properties like this modern, spacious house, we offer trusted deals, personalized support, and a commitment to helping you settle into a place that truly feels like home.",
+        "At Elite Property Solutions, we make finding your perfect home simple and stress-free — whether you&apos;re starting a new chapter or upgrading for your family&apos;s needs. With properties like this modern, spacious house, we offer trusted deals, personalized support, and a commitment to helping you settle into a place that truly feels like home.",
       imageSrc: "/brake-repair.jpg",
       imageAlt: "Professional brake repair service",
       reverse: false,
