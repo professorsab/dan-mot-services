@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection"
 import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
 import Footer from "@/components/Footer"
-import Image from "next/image"
 
 export default function Home() {
   return (
