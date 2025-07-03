@@ -248,3 +248,6 @@
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}

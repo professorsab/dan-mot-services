@@ -31,54 +31,79 @@ export default function AboutHero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/aboutUs.png"
-          alt="About Us background"
+          alt="Professional automotive workshop"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-white/20"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Welcome Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-red-500 mb-4 animate-fade-in-up">WELCOME</h1>
-          <p className="text-xl text-gray-700 font-medium animate-fade-in-up animation-delay-200">TO OUR COMPANY</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
+            WELCOME TO
+          </h1>
+          <p className="text-2xl text-red-500 font-bold animate-fade-in-up gradient-text">
+            DAN MOT & SERVICES
+          </p>
         </div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Text Content */}
           <div ref={textRef} className="opacity-0">
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+            <div className="glass-effect bg-black/70 border border-white/10 shadow-xl p-8 rounded-xl space-y-6 text-white leading-relaxed backdrop-blur-sm">
+              <h2 className="text-3xl font-bold text-red-500 mb-6">Your Trusted Automotive Partner</h2>
+              
               <p className="text-lg">
-                At Dan MOT & Services, we believe that quality work, honest service, and customer care go a long way.
-                Our team of skilled and hardworking technicians is dedicated to keeping your vehicle safe, reliable, and
-                running smoothly. Whether it&apos;s a routine check-up, a fender bender, or more serious damage, we handle
-                every job with the same level of care and attention to detail.
+                At Dan MOT & Services, we believe that quality workmanship, honest service, and genuine customer care 
+                are the foundation of a successful automotive business. Our team of skilled and experienced technicians 
+                is dedicated to keeping your vehicle safe, reliable, and running at its best.
               </p>
 
               <p className="text-lg">
-                We know how stressful car issues can be — that&apos;s why we&apos;re here to guide you through the process,
-                explain everything clearly, and get you back on the road with confidence. From start to finish, we&apos;re
-                committed to making your experience as straightforward and stress-free as possible.
+                Whether you need a routine MOT test, comprehensive service, brake repair, or emergency assistance, 
+                we handle every job with the same level of professional care and attention to detail. We understand 
+                that vehicle problems can be stressful and inconvenient.
               </p>
 
-              <p className="text-lg">At Dan MOT & Services, your vehicle is in good hands — and so are you.</p>
+              <p className="text-lg">
+                That&apos;s why we&apos;re committed to providing clear communication, transparent pricing, and efficient service 
+                to get you back on the road with complete confidence in your vehicle&apos;s safety and performance.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="text-center p-4 bg-red-500/20 rounded-lg">
+                  <div className="text-2xl font-bold text-red-500">20+</div>
+                  <div className="text-sm">Years Experience</div>
+                </div>
+                <div className="text-center p-4 bg-red-500/20 rounded-lg">
+                  <div className="text-2xl font-bold text-red-500">1000+</div>
+                  <div className="text-sm">Happy Customers</div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Image */}
           <div ref={imageRef} className="opacity-0">
-            <div className="relative rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 border-4 border-red-500">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 border-4 border-red-500 hover-glow">
               <Image
                 src="/dan-himself.jpg"
-                alt="Dan working on a car engine"
+                alt="Dan working professionally on a car engine"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="glass-effect bg-black/50 p-4 rounded-lg">
+                  <h3 className="text-white font-bold text-lg">Dan - Owner & Lead Technician</h3>
+                  <p className="text-gray-200 text-sm">Certified automotive specialist with 20+ years experience</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
