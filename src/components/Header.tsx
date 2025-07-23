@@ -1,12 +1,15 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X, Wrench } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Helper function to get the correct link based on current page
+  const getLink = (section: string) => {
+    if (pathname === '/about') {
+      return `/#${section}`
+    }
+    return `#${section}`
+  }
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <nav
@@ -25,8 +35,14 @@ export default function Header() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center group-hover:bg-red-600 transition-colors duration-300">
-            <Wrench className="w-5 h-5 text-white" />
+          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-red-500 group-hover:border-red-400 transition-colors duration-300">
+            <Image 
+              src="/Dan updated logo.png" 
+              alt="Dan MOT & Services Logo" 
+              width={48} 
+              height={48} 
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className="text-white font-bold text-xl tracking-wide group-hover:text-red-400 transition-colors duration-300">
             Dan MOT & Services
@@ -37,34 +53,30 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
-            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium relative group"
+            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium nav-link"
           >
             Home
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
             href="/about"
-            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium relative group"
+            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium nav-link"
           >
             About Us
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
-            href="#services"
-            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium relative group"
+            href={getLink('services')}
+            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium nav-link"
           >
             Services
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
-            href="#contact"
-            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium relative group"
+            href={getLink('contact')}
+            className="text-white/90 hover:text-red-400 transition-all duration-300 text-sm font-medium nav-link"
           >
             Contact
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
-            href="#contact"
+            href={getLink('contact')}
             className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
           >
             Book Now
@@ -102,21 +114,21 @@ export default function Header() {
                 About Us
               </Link>
               <Link
-                href="#services"
+                href={getLink('services')}
                 className="text-white hover:text-red-400 transition-colors duration-300 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
-                href="#contact"
+                href={getLink('contact')}
                 className="text-white hover:text-red-400 transition-colors duration-300 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link
-                href="#contact"
+                href={getLink('contact')}
                 className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

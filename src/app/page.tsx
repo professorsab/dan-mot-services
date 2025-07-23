@@ -6,7 +6,7 @@ import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen page-transition">
       <Header />
       <HeroSection />
       <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat object-cover"
