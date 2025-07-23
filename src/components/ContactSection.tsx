@@ -25,6 +25,7 @@ export default function ContactSection() {
     subject: "general",
     message: "",
   })
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -46,34 +47,43 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneNumber: "",
-        subject: "general",
-        message: "",
+
+    try {
+      const res = await fetch("/api/contactus", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       })
-    }, 7000)
+
+      if (!res.ok) {
+        throw new Error("Failed to send message.")
+      }
+
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          subject: "general",
+          message: "",
+        })
+      }, 7000)
+    } catch (error) {
+      alert("Something went wrong while sending the message.")
+      console.error(error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <section id="contact" className="py-20 relative">
-      {/* Background overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 gradient-text">
             Get In Touch
@@ -84,65 +94,32 @@ export default function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-          {/* Contact Information */}
           <div className="lg:col-span-2">
             <div className="glass-effect bg-gray-900/80 p-8 rounded-xl border-4 border-red-500 hover-lift">
               <h3 className="text-red-500 text-2xl font-bold mb-2">Contact Information</h3>
               <p className="text-white mb-8">Ready to service your vehicle? Get in touch today!</p>
 
               <div className="space-y-6">
-                <div className="flex items-center space-x-4 group">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors duration-300">
-                    <Phone className="w-5 h-5 text-red-500" />
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold">Phone</p>
-                    <p className="text-gray-300">07440398538</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 group">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors duration-300">
-                    <Mail className="w-5 h-5 text-red-500" />
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold">Email</p>
-                    <p className="text-gray-300">enquiry@danmot.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors duration-300">
-                    <MapPin className="w-5 h-5 text-red-500 mt-1" />
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold">Location</p>
-                    <div className="text-gray-300 text-sm">
-                      <p>132 Dartmouth Street</p>
-                      <p>Boston, Massachusetts 02156</p>
-                      <p>United States</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4 group">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors duration-300">
-                    <Clock className="w-5 h-5 text-red-500" />
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold">Hours</p>
-                    <div className="text-gray-300 text-sm">
-                      <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
-                      <p>Sat: 8:00 AM - 4:00 PM</p>
-                      <p>Sun: Emergency Only</p>
-                    </div>
-                  </div>
-                </div>
+                <ContactInfo icon={<Phone className="w-5 h-5 text-red-500" />} title="Phone" value="07440398538" />
+                <ContactInfo icon={<Mail className="w-5 h-5 text-red-500" />} title="Email" value="enquiry@danmot.com" />
+                <ContactInfo icon={<MapPin className="w-5 h-5 text-red-500 mt-1" />} title="Location" value={
+                  <>
+                    <p>132 Dartmouth Street</p>
+                    <p>Boston, Massachusetts 02156</p>
+                    <p>United States</p>
+                  </>
+                } />
+                <ContactInfo icon={<Clock className="w-5 h-5 text-red-500" />} title="Hours" value={
+                  <>
+                    <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                    <p>Sat: 8:00 AM - 4:00 PM</p>
+                    <p>Sun: Emergency Only</p>
+                  </>
+                } />
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-3">
             <div className="glass-effect bg-white/10 p-8 rounded-xl">
               {isSubmitted ? (
@@ -153,62 +130,16 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name Fields */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">First Name</label>
-                      <Input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/20 border-white/30 text-white placeholder-gray-300 focus:border-red-500 focus:ring-red-500"
-                        placeholder="John"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Last Name</label>
-                      <Input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/20 border-white/30 text-white placeholder-gray-300 focus:border-red-500 focus:ring-red-500"
-                        placeholder="Smith"
-                        required
-                      />
-                    </div>
+                    <TextField label="First Name" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="John" required />
+                    <TextField label="Last Name" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Smith" required />
                   </div>
 
-                  {/* Email and Phone */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Email</label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/20 border-white/30 text-white placeholder-gray-300 focus:border-red-500 focus:ring-red-500"
-                        placeholder="john@example.com"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white text-sm font-medium mb-2">Phone Number</label>
-                      <Input
-                        type="tel"
-                        name="phoneNumber"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/20 border-white/30 text-white placeholder-gray-300 focus:border-red-500 focus:ring-red-500"
-                        placeholder="07440398538"
-                      />
-                    </div>
+                    <TextField label="Email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" required />
+                    <TextField label="Phone Number" name="phoneNumber" type="tel" value={formData.phoneNumber} onChange={handleInputChange} placeholder="07440398538" />
                   </div>
 
-                  {/* Subject Selection */}
                   <div>
                     <label className="block text-white text-sm font-medium mb-4">Service Required</label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -235,8 +166,7 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  {/* Message */}
-                    <div>
+                  <div>
                     <label className="block text-white text-sm font-medium mb-2">Message</label>
                     <Textarea
                       name="message"
@@ -246,9 +176,8 @@ export default function ContactSection() {
                       rows={6}
                       className="w-full bg-white/20 border-white/30 text-white placeholder-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
-                    </div>
+                  </div>
 
-                  {/* Submit Button */}
                   <div className="flex justify-end">
                     <Button 
                       type="submit" 
@@ -272,5 +201,36 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
+  )
+}
+
+function TextField({ label, name, value, onChange, placeholder, required = false, type = "text" }: any) {
+  return (
+    <div>
+      <label className="block text-white text-sm font-medium mb-2">{label}</label>
+      <Input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        className="w-full bg-white/20 border-white/30 text-white placeholder-gray-300 focus:border-red-500 focus:ring-red-500"
+        placeholder={placeholder}
+        required={required}
+      />
+    </div>
+  )
+}
+
+function ContactInfo({ icon, title, value }: { icon: React.ReactNode, title: string, value: React.ReactNode }) {
+  return (
+    <div className="flex items-start space-x-4 group">
+      <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors duration-300">
+        {icon}
+      </div>
+      <div>
+        <p className="text-white font-semibold">{title}</p>
+        <div className="text-gray-300 text-sm">{value}</div>
+      </div>
+    </div>
   )
 }
