@@ -36,16 +36,16 @@ export default function AboutHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-[rgb(0,24,40)]/40"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Welcome Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-bold text-[rgb(251,251,251)] mb-4 animate-fade-in-up">
             WELCOME TO
           </h1>
-          <p className="text-2xl text-red-500 font-bold animate-fade-in-up gradient-text">
+          <p className="text-2xl text-[rgb(0,192,241)] font-bold animate-fade-in-up gradient-text">
             DAN MOT & SERVICES
           </p>
         </div>
@@ -54,8 +54,8 @@ export default function AboutHero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Text Content */}
           <div ref={textRef} className="opacity-0">
-            <div className="glass-effect bg-black/70 border border-white/10 shadow-xl p-8 rounded-xl space-y-6 text-white leading-relaxed backdrop-blur-sm">
-              <h2 className="text-3xl font-bold text-red-500 mb-6">Your Trusted Automotive Partner</h2>
+            <div className="glass-effect bg-[rgb(0,24,40)]/70 border border-[rgb(196,203,205)]/10 shadow-xl p-8 rounded-xl space-y-6 text-[rgb(251,251,251)] leading-relaxed backdrop-blur-sm">
+              <h2 className="text-3xl font-bold text-[rgb(0,192,241)] mb-6">Your Trusted Automotive Partner</h2>
               
               <p className="text-lg">
                 At Dan MOT & Services, we believe that quality workmanship, honest service, and genuine customer care 
@@ -75,12 +75,12 @@ export default function AboutHero() {
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="text-center p-4 bg-red-500/20 rounded-lg">
-                  <div className="text-2xl font-bold text-red-500">20+</div>
+                <div className="text-center p-4 bg-[rgb(0,192,241)]/20 rounded-lg">
+                  <div className="text-2xl font-bold text-[rgb(0,192,241)]">20+</div>
                   <div className="text-sm">Years Experience</div>
                 </div>
-                <div className="text-center p-4 bg-red-500/20 rounded-lg">
-                  <div className="text-2xl font-bold text-red-500">1000+</div>
+                <div className="text-center p-4 bg-[rgb(0,192,241)]/20 rounded-lg">
+                  <div className="text-2xl font-bold text-[rgb(0,192,241)]">1000+</div>
                   <div className="text-sm">Happy Customers</div>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function AboutHero() {
 
           {/* Image */}
           <div ref={imageRef} className="opacity-0">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 border-4 border-red-500 hover-glow">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 border-4 border-[rgb(0,192,241)] hover-glow">
               <Image
                 src="/dan-himself.jpg"
                 alt="Dan working professionally on a car engine"
@@ -97,11 +97,11 @@ export default function AboutHero() {
                 height={400}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0,24,40)]/30 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4">
-                <div className="glass-effect bg-black/50 p-4 rounded-lg">
-                  <h3 className="text-white font-bold text-lg">Dan - Owner & Lead Technician</h3>
-                  <p className="text-gray-200 text-sm">Certified automotive specialist with 20+ years experience</p>
+                <div className="glass-effect bg-[rgb(0,24,40)]/50 p-4 rounded-lg">
+                  <h3 className="text-[rgb(251,251,251)] font-bold text-lg">Dan - Owner & Lead Technician</h3>
+                  <p className="text-[rgb(196,203,205)] text-sm">Certified automotive specialist with 20+ years experience</p>
                 </div>
               </div>
             </div>

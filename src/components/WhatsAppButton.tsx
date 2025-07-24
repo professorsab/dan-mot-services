@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
   return (
     <button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 animate-bounce group"
+      className="fixed bottom-6 left-6 z-50 bg-[rgb(0,192,241)] hover:bg-[rgb(0,170,220)] text-[rgb(251,251,251)] p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 animate-bounce group"
       aria-label="Contact us on WhatsApp"
     >
       <svg 
@@ -26,13 +26,13 @@ export default function WhatsAppButton() {
       </svg>
       
       {/* Tooltip */}
-      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-black text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-[rgb(0,24,40)] text-[rgb(251,251,251)] text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
         Chat with us on WhatsApp
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black"></div>
+        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[rgb(0,24,40)]"></div>
       </div>
       
       {/* Pulse animation ring */}
-      <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
+      <div className="absolute inset-0 rounded-full bg-[rgb(0,192,241)] animate-ping opacity-20"></div>
     </button>
   )
 }

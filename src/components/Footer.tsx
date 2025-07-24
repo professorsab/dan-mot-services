@@ -29,14 +29,14 @@ export default function Footer() {
   }
 
   return (
-    <footer ref={footerRef} className="bg-black text-white py-16 relative overflow-hidden">
+    <footer ref={footerRef} className="bg-[rgb(0,24,40)] text-[rgb(251,251,251)] py-16 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-red-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgb(0,192,241)]/10 via-transparent to-[rgb(0,192,241)]/5"></div>
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-32 h-32 bg-red-500/5 rounded-full animate-float"
+            className="absolute w-32 h-32 bg-[rgb(0,192,241)]/5 rounded-full animate-float"
             style={{
               left: `${10 + i * 20}%`,
               top: `${20 + i * 15}%`,
@@ -51,8 +51,8 @@ export default function Footer() {
         {/* Company Info */}
         <div className={`mb-12 transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <div className="flex items-center justify-center space-x-3 mb-6 group cursor-pointer hover:scale-105 transition-transform duration-300">
-            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-            <span className="font-bold text-2xl tracking-wide group-hover:text-red-400 transition-colors duration-300">
+            <div className="w-3 h-3 bg-[rgb(0,192,241)] rounded-full animate-pulse"></div>
+            <span className="font-bold text-2xl tracking-wide group-hover:text-[rgb(0,192,241)] transition-colors duration-300">
               Dan MOT & Services LTD
             </span>
           </div>
@@ -65,7 +65,7 @@ export default function Footer() {
             ].map((item, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-center space-x-2 text-red-500 hover:text-red-400 transition-all duration-300 cursor-pointer group ${
+                className={`flex items-center justify-center space-x-2 text-[rgb(0,192,241)] hover:text-[rgb(0,170,220)] transition-all duration-300 cursor-pointer group ${
                   isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${0.2 + index * 0.1}s` }}
@@ -83,7 +83,7 @@ export default function Footer() {
           <div
             className={`transition-all duration-1000 delay-300 ${isVisible ? "animate-slide-in-left" : "opacity-0"}`}
           >
-            <h4 className="font-bold text-xl mb-6 text-red-500">Support</h4>
+            <h4 className="font-bold text-xl mb-6 text-[rgb(0,192,241)]">Support</h4>
             <div className="space-y-3">
               {[
                 { href: "/about", label: "About Us" },
@@ -93,7 +93,7 @@ export default function Footer() {
                 <Link
                   key={index}
                   href={link.href}
-                  className="block text-gray-300 hover:text-red-400 transition-all duration-300 transform hover:translate-x-2 hover:scale-105"
+                  className="block text-[rgb(196,203,205)] hover:text-[rgb(0,192,241)] transition-all duration-300 transform hover:translate-x-2 hover:scale-105"
                 >
                   {link.label}
                 </Link>
@@ -103,12 +103,12 @@ export default function Footer() {
 
           {/* Services */}
           <div className={`transition-all duration-1000 delay-500 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h4 className="font-bold text-xl mb-6 text-red-500">Services</h4>
+            <h4 className="font-bold text-xl mb-6 text-[rgb(0,192,241)]">Services</h4>
             <div className="space-y-3">
               {["MOT Testing", "Oil Changes", "Brake Repairs"].map((service, index) => (
                 <p
                   key={index}
-                  className="text-gray-300 hover:text-red-400 transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="text-[rgb(196,203,205)] hover:text-[rgb(0,192,241)] transition-all duration-300 cursor-pointer hover:scale-105"
                 >
                   {service}
                 </p>
@@ -120,7 +120,7 @@ export default function Footer() {
           <div
             className={`transition-all duration-1000 delay-700 ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}
           >
-            <h4 className="font-bold text-xl mb-6 text-red-500">Stay with us</h4>
+            <h4 className="font-bold text-xl mb-6 text-[rgb(0,192,241)]">Stay with us</h4>
             <div className="flex justify-center space-x-6 mb-6">
               {[
                 { icon: Facebook, href: "#" },
@@ -129,32 +129,32 @@ export default function Footer() {
                 <Link
                   key={index}
                   href={social.href}
-                  className="text-red-500 hover:text-red-400 transition-all duration-300 transform hover:scale-125 hover:rotate-12"
+                  className="text-[rgb(0,192,241)] hover:text-[rgb(0,170,220)] transition-all duration-300 transform hover:scale-125 hover:rotate-12"
                 >
                   <social.icon className="w-8 h-8" />
                 </Link>
               ))}
             </div>
-            <div className="space-y-2 text-red-500 text-sm">
-              <p className="hover:text-red-400 transition-colors duration-300 cursor-pointer">@danmotltd</p>
-              <p className="hover:text-red-400 transition-colors duration-300 cursor-pointer">@danmotservices</p>
+            <div className="space-y-2 text-[rgb(0,192,241)] text-sm">
+              <p className="hover:text-[rgb(0,170,220)] transition-colors duration-300 cursor-pointer">@danmotltd</p>
+              <p className="hover:text-[rgb(0,170,220)] transition-colors duration-300 cursor-pointer">@danmotservices</p>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div
-          className={`border-t border-gray-800 pt-8 transition-all duration-1000 delay-900 ${
+          className={`border-t border-[rgb(0,24,40)] pt-8 transition-all duration-1000 delay-900 ${
             isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center text-[rgb(196,203,205)] text-sm">
             <p>© 2025 Dan MOT & Services LTD. All Rights Reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="hover:text-red-400 transition-colors duration-300">
+              <Link href="#" className="hover:text-[rgb(0,192,241)] transition-colors duration-300">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-red-400 transition-colors duration-300">
+              <Link href="#" className="hover:text-[rgb(0,192,241)] transition-colors duration-300">
                 Terms of Service
               </Link>
             </div>
@@ -164,7 +164,7 @@ export default function Footer() {
         {/* Scroll to top button */}
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-red-500 hover:bg-red-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl z-50 animate-bounce"
+          className="fixed bottom-8 right-8 bg-[rgb(0,192,241)] hover:bg-[rgb(0,170,220)] text-[rgb(251,251,251)] p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl z-50 animate-bounce"
         >
           <ArrowUp className="w-6 h-6" />
         </button>

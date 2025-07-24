@@ -47,24 +47,24 @@ function ServiceCard({ title, description, imageSrc, imageAlt, reverse = false }
         >
           {/* Text Content */}
           <div className={`text-content opacity-0 ${reverse ? "lg:col-start-2" : ""}`}>
-            <div className="glass-effect bg-black/80 p-8 rounded-xl shadow-2xl border-l-4 border-red-500 hover-lift">
-              <h2 className="text-3xl font-bold text-red-500 mb-6 tracking-wide">{title}</h2>
-              <p className="text-lg leading-relaxed text-gray-200">{description}</p>
+            <div className="glass-effect bg-[rgb(0,24,40)]/80 p-8 rounded-xl shadow-2xl border-l-4 border-[rgb(0,192,241)] hover-lift">
+              <h2 className="text-3xl font-bold text-[rgb(0,192,241)] mb-6 tracking-wide">{title}</h2>
+              <p className="text-lg leading-relaxed text-[rgb(196,203,205)]">{description}</p>
               
               {/* Service features */}
               <div className="mt-6 space-y-2">
                 {title.includes("MOT") && (
                   <>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Class 4 & 7 MOT Testing</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Same Day Certificates</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Pre-MOT Health Checks</span>
                     </div>
                   </>
@@ -72,16 +72,16 @@ function ServiceCard({ title, description, imageSrc, imageAlt, reverse = false }
                 
                 {title.includes("OIL") && (
                   <>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Premium Oil & Filters</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Multi-Point Inspections</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Service History Updates</span>
                     </div>
                   </>
@@ -89,16 +89,16 @@ function ServiceCard({ title, description, imageSrc, imageAlt, reverse = false }
                 
                 {title.includes("BRAKE") && (
                   <>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Brake Pad Replacement</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Disc & Drum Services</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <div className="flex items-center text-[rgb(196,203,205)]">
+                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>ABS System Diagnostics</span>
                     </div>
                   </>
@@ -117,10 +117,10 @@ function ServiceCard({ title, description, imageSrc, imageAlt, reverse = false }
                 height={400}
                 className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0,24,40)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="glass-effect bg-black/70 p-3 rounded-lg">
-                  <p className="text-white text-sm font-medium">Professional {title.toLowerCase()} service</p>
+                <div className="glass-effect bg-[rgb(0,24,40)]/70 p-3 rounded-lg">
+                  <p className="text-[rgb(251,251,251)] text-sm font-medium">Professional {title.toLowerCase()} service</p>
                 </div>
               </div>
             </div>
@@ -163,15 +163,15 @@ export default function AboutServices() {
     <section className="relative overflow-hidden min-h-screen">
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Image src="/bgaboutservice.jpg" alt="Automotive workshop background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-[rgb(0,24,40)]/60"></div>
       </div>
       <div className="relative z-10">
         {/* Section header */}
         <div className="text-center py-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 gradient-text">
+          <h2 className="text-4xl md:text-5xl font-bold text-[rgb(251,251,251)] mb-4 gradient-text">
             Our Professional Services
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-[rgb(196,203,205)] max-w-2xl mx-auto">
             Comprehensive automotive solutions delivered by experienced professionals
           </p>
         </div>
