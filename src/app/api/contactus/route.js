@@ -29,7 +29,7 @@ export async function POST(request) {
 
     const htmlToTeam = `
       <div style="background-color:#111827;padding:32px;border-radius:10px;color:#ffffff;font-family:Segoe UI, sans-serif;max-width:600px;margin:auto;">
-        <h2 style="color:#ef4444;text-align:center;margin-bottom:24px;">📬 New Contact Request</h2>
+        <h2 style="color:rgb(0,192,241);text-align:center;margin-bottom:24px;">📬 New Contact Request</h2>
         <hr style="border:1px solid #1f2937;margin-bottom:24px"/>
         <table style="width:100%;line-height:1.8;">
           <tr><td><strong>Full Name:</strong></td><td>${firstName} ${lastName}</td></tr>
