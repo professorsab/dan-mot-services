@@ -217,7 +217,7 @@
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 30px rgba(0,192,241, 0.3);
 }
 
 .shimmer-effect {
@@ -238,10 +238,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 5px rgba(0,192,241, 0.5);
   }
   50% {
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+    box-shadow: 0 0 20px rgba(0,192,241, 0.8), 0 0 30px rgba(0,192,241, 0.6);
   }
 }
 

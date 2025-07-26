@@ -7,6 +7,14 @@ import { useState, useEffect } from "react"
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 1300,
+    })
+  }
+
+  
+
   useEffect(() => {
     setIsVisible(true)
   }, [])
@@ -49,6 +57,7 @@ export default function HeroSection() {
         <div className={`transition-all duration-1000 delay-400 ${isVisible ? "animate-bounce-in" : "opacity-0"}`}>
           <Button
             size="lg"
+            onClick={handleScroll}
             className="bg-[rgb(0,192,241)] hover:bg-[rgb(0,170,220)] text-[rgb(251,251,251)] px-10 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl animate-pulse-glow relative overflow-hidden group"
           >
             <span className="relative z-10">Book to Secure Your Slot</span>

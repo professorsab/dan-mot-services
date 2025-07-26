@@ -59,9 +59,9 @@ export default function Footer() {
 
           <div className="space-y-3">
             {[
-              { icon: Mail, text: "enquiry@danmot.com" },
-              { icon: Phone, text: "(508) 795-3948" },
-              { icon: MapPin, text: "132 Dartmouth Street, Boston MA" },
+              { icon: Mail, text: "danmotservice@yahoo.com" },
+              { icon: Phone, text: "(+44) 7440-361538" },
+              { icon: MapPin, text: "Unit 21 Page Rd, Norwich NR3 2BX, United Kingdom" },
             ].map((item, index) => (
               <div
                 key={index}
@@ -123,7 +123,7 @@ export default function Footer() {
             <h4 className="font-bold text-xl mb-6 text-[rgb(0,192,241)]">Stay with us</h4>
             <div className="flex justify-center space-x-6 mb-6">
               {[
-                { icon: Facebook, href: "#" },
+                { icon: Facebook, href: "https://www.facebook.com/people/Dan-MOT-Services/100075980135115/" },
                 { icon: Instagram, href: "#" },
               ].map((social, index) => (
                 <Link

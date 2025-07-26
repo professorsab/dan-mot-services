@@ -101,12 +101,12 @@ export default function ContactSection() {
 
               <div className="space-y-6">
                 <ContactInfo icon={<Phone className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Phone" value="07440398538" />
-                <ContactInfo icon={<Mail className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Email" value="enquiry@danmot.com" />
+                <ContactInfo icon={<Mail className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Email" value="danmotservice@yahoo.com" />
                 <ContactInfo icon={<MapPin className="w-5 h-5 text-[rgb(0,192,241)] mt-1" />} title="Location" value={
                   <>
-                    <p>132 Dartmouth Street</p>
-                    <p>Boston, Massachusetts 02156</p>
-                    <p>United States</p>
+                    <p>Unit 21 Page Rd</p>
+                    <p>Norwich NR3 2BX</p>
+                    <p>United Kingdom</p>
                   </>
                 } />
                 <ContactInfo icon={<Clock className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Hours" value={
