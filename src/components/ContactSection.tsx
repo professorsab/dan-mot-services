@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 
 interface ContactFormData {
-  firstName: string
-  lastName: string
-  email: string
-  phoneNumber: string
-  subject: string
-  message: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
 }
 
 export default function ContactSection() {
@@ -24,44 +24,46 @@ export default function ContactSection() {
     phoneNumber: "",
     subject: "general",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubjectChange = (subject: string) => {
     setFormData((prev) => ({
       ...prev,
       subject,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const res = await fetch("/api/contactus", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (!res.ok) {
-        throw new Error("Failed to send message.")
+        throw new Error("Failed to send message.");
       }
 
-      setIsSubmitted(true)
+      setIsSubmitted(true);
       setTimeout(() => {
-        setIsSubmitted(false)
+        setIsSubmitted(false);
         setFormData({
           firstName: "",
           lastName: "",
@@ -69,15 +71,15 @@ export default function ContactSection() {
           phoneNumber: "",
           subject: "general",
           message: "",
-        })
-      }, 7000)
+        });
+      }, 7000);
     } catch (error) {
-      alert("Something went wrong while sending the message.")
-      console.error(error)
+      alert("Something went wrong while sending the message.");
+      console.error(error);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <section id="contact" className="py-20 relative">
@@ -201,10 +203,28 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-function TextField({ label, name, value, onChange, placeholder, required = false, type = "text" }: any) {
+interface TextFieldProps {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder: string;
+  required?: boolean;
+  type?: string;
+}
+
+function TextField({
+  label,
+  name,
+  value,
+  onChange,
+  placeholder,
+  required = false,
+  type = "text",
+}: TextFieldProps) {
   return (
     <div>
       <label className="block text-[rgb(251,251,251)] text-sm font-medium mb-2">{label}</label>
@@ -218,10 +238,18 @@ function TextField({ label, name, value, onChange, placeholder, required = false
         required={required}
       />
     </div>
-  )
+  );
 }
 
-function ContactInfo({ icon, title, value }: { icon: React.ReactNode, title: string, value: React.ReactNode }) {
+function ContactInfo({
+  icon,
+  title,
+  value,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  value: React.ReactNode;
+}) {
   return (
     <div className="flex items-start space-x-4 group">
       <div className="w-12 h-12 bg-[rgb(0,192,241)]/20 rounded-full flex items-center justify-center group-hover:bg-[rgb(0,192,241)]/30 transition-colors duration-300">
@@ -232,5 +260,5 @@ function ContactInfo({ icon, title, value }: { icon: React.ReactNode, title: str
         <div className="text-[rgb(196,203,205)] text-sm">{value}</div>
       </div>
     </div>
-  )
+  );
 }
