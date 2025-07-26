@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 
 export default function WhatsAppButton() {
   const whatsappNumber = "447440398538"
