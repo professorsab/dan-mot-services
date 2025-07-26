@@ -48,12 +48,11 @@ export async function POST(request) {
 
     const htmlToCustomer = `
       <div style="background-color:#111827;padding:32px;border-radius:10px;color:#ffffff;font-family:Segoe UI, sans-serif;max-width:600px;margin:auto;">
-        <h2 style="color:#ef4444;text-align:center;margin-bottom:24px;">Thank You for Contacting Us!</h2>
+        <h2 style="color:rgb(0,192,241);text-align:center;margin-bottom:24px;">📨 Message Received</h2>
         <hr style="border:1px solid #1f2937;margin-bottom:24px"/>
-        <p style="text-align:center;font-size:16px;line-height:1.6;">
+        <p style="font-size:16px;line-height:1.8;text-align:center;">
           Hi <strong>${firstName}</strong>,<br/>
-          We’ve received your message regarding <strong>${subject}</strong>.
-          Our team at <strong>Dan MOT & Services</strong> will get back to you within 24 hours.
+          Thanks for reaching out to <strong>Dan MOT & Services</strong>! We've received your message regarding <strong>${subject || "your inquiry"}</strong>.
         </p>
         <div style="margin:30px 0;">
           <strong>Your Message:</strong>
@@ -61,10 +60,13 @@ export async function POST(request) {
             ${message}
           </div>
         </div>
-        <p style="text-align:center;margin-top:24px;">
-          📞 For urgent matters, call us directly at <strong style="color:#ef4444;">07440398538</strong>.
+        <p style="font-size:16px;line-height:1.8;text-align:center;">
+          Our team will get back to you within 24 hours. If it's urgent, feel free to call us directly at
+          <strong style="color:rgb(0,192,241);">07440398538</strong>.
         </p>
-        <p style="text-align:center;margin-top:32px;font-style:italic;">We look forward to helping you!</p>
+        <p style="text-align:center;margin-top:32px;font-style:italic;">
+          We appreciate your interest and look forward to assisting you.
+        </p>
         <p style="text-align:center;margin-top:12px;">– Dan MOT & Services Team</p>
       </div>
     `

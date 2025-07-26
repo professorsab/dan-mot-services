@@ -144,10 +144,10 @@ export default function ContactSection() {
                     <label className="block text-[rgb(251,251,251)] text-sm font-medium mb-4">Service Required</label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       {[
-                        { value: "general", label: "General Inquiry" },
-                        { value: "mot", label: "MOT Test" },
-                        { value: "service", label: "Car Service" },
-                        { value: "brake", label: "Brake Repair" },
+                        { value: "General Inquiry", label: "General Inquiry" },
+                        { value: "MOT Test", label: "MOT Test" },
+                        { value: "Car Service", label: "Car Service" },
+                        { value: "Brake Repair", label: "Brake Repair" },
                       ].map((option) => (
                         <label key={option.value} className="flex items-center space-x-2 cursor-pointer group">
                           <input
