@@ -57,24 +57,25 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="space-y-3">
+            <div className="space-y-3">
             {[
-              { icon: Mail, text: "danmotservice@yahoo.com" },
-              { icon: Phone, text: "(+44) 7440-361538" },
-              { icon: MapPin, text: "Unit 21 Page Rd, Norwich NR3 2BX, United Kingdom" },
+              { icon: Mail, text: "danmotservice@yahoo.com", href: "mailto:danmotservice@yahoo.com" },
+              { icon: Phone, text: "(+44) 7440-361538", href: "tel:+447440361538" },
+              { icon: MapPin, text: "Unit 21 Page Rd, Norwich NR3 2BX, United Kingdom", href: "https://maps.google.com/?q=Unit+21+Page+Rd,+Norwich+NR3+2BX,+United+Kingdom" },
             ].map((item, index) => (
-              <div
-                key={index}
-                className={`flex items-center justify-center space-x-2 text-[rgb(0,192,241)] hover:text-[rgb(0,170,220)] transition-all duration-300 cursor-pointer group ${
-                  isVisible ? "animate-fade-in-up" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+              <a
+              key={index}
+              href={item.href}
+              className={`flex items-center justify-center space-x-2 text-[rgb(0,192,241)] hover:text-[rgb(0,170,220)] transition-all duration-300 cursor-pointer group ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
               >
-                <item.icon className="w-4 h-4 group-hover:animate-pulse" />
-                <p className="group-hover:scale-105 transition-transform duration-300">{item.text}</p>
-              </div>
+              <item.icon className="w-4 h-4 group-hover:animate-pulse" />
+              <p className="group-hover:scale-105 transition-transform duration-300">{item.text}</p>
+              </a>
             ))}
-          </div>
+            </div>
         </div>
 
         {/* Links and Social */}
