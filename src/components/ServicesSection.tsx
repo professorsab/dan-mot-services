@@ -72,7 +72,7 @@ function ServiceCard({ icon, title, description, features, index }: ServiceCardP
         </ul>
 
         {/* Progress bar animation */}
-        <div className="mt-6 h-1 bg-[rgb(0,24,40)] rounded-full overflow-hidden">
+        <div className="my-6 h-1 bg-[rgb(0,24,40)] rounded-full overflow-hidden">
           <div className="h-full bg-gradient-to-r from-[rgb(0,192,241)] to-[rgb(0,170,220)] rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out"></div>
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function ServicesSection() {
       title: "MOT TESTING",
       description: "Comprehensive MOT testing to ensure your vehicle meets UK safety standards. Our certified technicians provide thorough inspections and detailed reports.",
       features: [
-        "Class 4 & 7 MOT Testing",
+        "MOT Testing",
         "Pre-MOT Health Checks",
         "Same Day Certificates",
         "Detailed Failure Reports"
@@ -106,13 +106,17 @@ export default function ServicesSection() {
     },
     {
       icon: <Wrench className="w-10 h-10" />,
-      title: "BRAKE REPAIRS",
-      description: "Your safety is paramount. Our brake specialists provide expert inspections, repairs, and replacements using quality components.",
+      title: "VEHICLE REPAIRS",
+      description: "Comprehensive vehicle repair services for all makes and models. Our skilled technicians handle everything from diagnostics to major repairs with precision.",
       features: [
-        "Brake Pad Replacement",
-        "Disc & Drum Services",
-        "Brake Fluid Changes",
-        "ABS System Diagnostics"
+        "Diagnostic Services",
+        "Brake System Repairs",
+        "Exhaust & Clutch Work",
+        "Suspension Repairs",
+        "Oil & Filter Exchange",
+        "Shocks & Struts",
+        "Welding Services",
+        "Gearbox & Cambelt"
       ]
     },
   ]
