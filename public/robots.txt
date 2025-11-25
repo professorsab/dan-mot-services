@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mot-norwich.co.uk
+
+# Sitemaps
+Sitemap: https://mot-norwich.co.uk/sitemap.xml

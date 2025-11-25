@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer"
+import { Resend } from "resend"
 
 export async function POST(request) {
   try {
@@ -19,13 +19,7 @@ export async function POST(request) {
       })
     }
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
+    const resend = new Resend(process.env.RESEND_API)
 
     const htmlToTeam = `
       <div style="background-color:#111827;padding:32px;border-radius:10px;color:#ffffff;font-family:Segoe UI, sans-serif;max-width:600px;margin:auto;">
@@ -71,26 +65,23 @@ export async function POST(request) {
       </div>
     `
 
-    const mailToTeam = {
-      from: `"Dan MOT Website" <${process.env.EMAIL_USER}>`,
-      to: "mfawaz182@gmail.com",
+    // Send to Team
+    await resend.emails.send({
+      from: "Dan MOT Website <no-reply@mot-norwich.co.uk>",
+      to: "danmotservice@yahoo.com",
       subject: `📥 New Contact Form: ${subject}`,
       html: htmlToTeam,
-    }
-
-    const mailToCustomer = {
-      from: `"Dan MOT & Services" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "✅ We've Received Your Message",
-      html: htmlToCustomer,
-    }
-
-    await transporter.sendMail(mailToTeam)
-    await transporter.sendMail(mailToCustomer)
-
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
     })
+
+    // Send to Customer
+    await resend.emails.send({
+      from: "Dan MOT & Services <no-reply@mot-norwich.co.uk>",
+      to: email,
+      subject: "Thanks for Contacting Us!",
+      html: htmlToCustomer,
+    })
+
+    return new Response(JSON.stringify({ success: true }), { status: 200 })
   } catch (error) {
     console.error("Email error:", error)
     return new Response(JSON.stringify({ error: "Internal server error" }), {

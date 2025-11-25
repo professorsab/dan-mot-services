@@ -57,16 +57,13 @@ function ServiceCard({ title, description, imageSrc, imageAlt, reverse = false }
                   <>
                     <div className="flex items-center text-[rgb(196,203,205)]">
                       <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
-                      <span>Class 4 & 7 MOT Testing</span>
+                      <span>Class 4 MOT Testing</span>
                     </div>
                     <div className="flex items-center text-[rgb(196,203,205)]">
                       <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
                       <span>Same Day Certificates</span>
                     </div>
-                    <div className="flex items-center text-[rgb(196,203,205)]">
-                      <div className="w-2 h-2 bg-[rgb(0,192,241)] rounded-full mr-3"></div>
-                      <span>Pre-MOT Health Checks</span>
-                    </div>
+                    
                   </>
                 )}
                 

@@ -2,7 +2,7 @@
 
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "447440398538"
+  const whatsappNumber = "447440361538"
   const message = "Hello! I'd like to inquire about your automotive services."
 
 

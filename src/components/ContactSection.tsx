@@ -102,7 +102,7 @@ export default function ContactSection() {
               <p className="text-[rgb(251,251,251)] mb-8">Ready to service your vehicle? Get in touch today!</p>
 
               <div className="space-y-6">
-                <ContactInfo icon={<Phone className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Phone" value="07440398538" />
+                <ContactInfo icon={<Phone className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Phone" value="+447440398538" />
                 <ContactInfo icon={<Mail className="w-5 h-5 text-[rgb(0,192,241)]" />} title="Email" value="danmotservice@yahoo.com" />
                 <ContactInfo icon={<MapPin className="w-5 h-5 text-[rgb(0,192,241)] mt-1" />} title="Location" value={
                   <>
@@ -139,7 +139,7 @@ export default function ContactSection() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <TextField label="Email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" required />
-                    <TextField label="Phone Number" name="phoneNumber" type="tel" value={formData.phoneNumber} onChange={handleInputChange} placeholder="07440398538" />
+                    <TextField label="Phone Number" name="phoneNumber" type="tel" value={formData.phoneNumber} onChange={handleInputChange} placeholder="+447440398538" />
                   </div>
 
                   <div>

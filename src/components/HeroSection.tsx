@@ -8,10 +8,13 @@ export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
 
   const handleScroll = () => {
-    window.scrollTo({
-      top: 1300,
-    })
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
   }
+};
+
+
 
   
 
